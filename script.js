@@ -179,7 +179,8 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  window.alert("Your secure password is: " + thePassword)
+  passwordText.value = thePassword;
+  // window.alert("Your secure password is: " + thePassword)
     thePassword = "";
 };
 
