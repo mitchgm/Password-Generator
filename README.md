@@ -9,13 +9,13 @@ In the 3rd challenge of the bootcamp, I set out to make a random password genera
 
 To view the project, clone the git repository using VS Code. this will allow you to vie the index.html file ass well as the css style file and javascript file. The website can be view by right clicking in the index.html file and opening via web browser. 
 
-Link to deployed website: 
+Link to deployed website: https://mitchgm.github.io/Password-Generator/ 
 
 # Usage
 
-![screenshot of home page](assets/images/home.jpg) 
+![screenshot of before the password is generated](./images/before.jpg) 
 
-![screenshot of the body](assets/images/body.jpg)
+![screenshot of after the password is generated](./images/after.jpg)
 
 
 
