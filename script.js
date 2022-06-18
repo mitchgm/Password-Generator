@@ -7,7 +7,7 @@ var specialCharactersArray = [
     "$",
     "%",
     "&",
-    "()",
+    ")",
     "*",
     "+",
     ",",
@@ -26,20 +26,22 @@ var specialCharactersArray = [
     "^",
     
 ];
+var userChar = [];
 
-var numberArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ];
-var lowCharArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var highCharArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",];
+var numberArray = [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ];
+var lowCharArray = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", ];
+var highCharArray = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",];
 
-var passwordLength, passwordLowChar, passwordHighChar, passwordNum, passwordSpecial, thePassword;
+var passwordLength, passwordLowChar, passwordHighChar, passwordNum, passwordSpecial;
+var  thePassword = "";
 
 
 function generatePassword () {
          getPasswordLength ();
-     //getPasswordLowChar ();
-          // getPasswordHighChar ();
-         //  getPasswordNum ();
-          // getPasswordSpecial ();
+     getPasswordLowChar ();
+           getPasswordHighChar ();
+           getPasswordNum ();
+          getPasswordSpecial ();
           getThePassword ();
         
 };
@@ -68,7 +70,9 @@ function getPasswordLowChar() {
     passwordLowChar = window.prompt("What character types would you like in the password? Would you like to include lowercase letters? Type yes or no. ");
    passwordLowChar = passwordLowChar.toLocaleLowerCase();
    if (passwordLowChar === "yes") {
-    return passwordLowChar = true;
+    userChar.push(lowCharArray);
+    
+     return passwordLowChar = true;
    }
 
     else if (passwordLowChar === "no") {
@@ -90,6 +94,8 @@ function getPasswordHighChar() {
     passwordHighChar =  window.prompt("Would you like to include uppercase letters? Type yes or no. ");
     passwordHighChar = passwordHighChar.toLocaleLowerCase();
     if (passwordHighChar === "yes") {
+        userChar.push(highCharArray);
+        
      return passwordHighChar = true;
     }
  
@@ -112,6 +118,7 @@ function getPasswordNum () {
     passwordNum = window.prompt("Would you like to include numbers? Type yes or no. ");
     passwordNum = passwordNum.toLocaleLowerCase();
     if (passwordNum === "yes") {
+        userChar.push(numberArray);
         return passwordNum = true;
     }
 
@@ -132,6 +139,7 @@ function getPasswordSpecial () {
     passwordSpecial = window.prompt("Would you like to include special characters? Type yes or no. ");
     passwordSpecial = passwordSpecial.toLocaleLowerCase();
     if (passwordSpecial === "yes") {
+        userChar.push(specialCharactersArray)
         return passwordSpecial = true;
     }
 
@@ -148,12 +156,16 @@ function getPasswordSpecial () {
 
 // start for loop get password function
 function getThePassword () {
+    userChar = userChar.flat();
+ 
     for (var i = 0; i < passwordLength; i++) {
-                
-        thePassword = (specialCharactersArray[Math.floor(Math.random() * passwordLength)]);
-        console.log(thePassword)
+      
+        thePassword += (userChar[Math.floor(Math.random() * userChar.length)]);
+       
 
     }
+    console.log (userChar);
+    console.log(thePassword);
 };
 
 
@@ -174,4 +186,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-console.log("hello world");
+
