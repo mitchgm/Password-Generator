@@ -33,7 +33,8 @@ var generatePassword = function() {
         passwordLength = passwordLength.toLocaleLowerCase();
 
         if (passwordLength > 7 && passwordLength < 128) {
-           var passwordLowChar = window.prompt('What character types would you like in the password? Would you like to include lowercase letters? Type yes or no. ');
+           var passwordLowChar = function() {
+            window.prompt('What character types would you like in the password? Would you like to include lowercase letters? Type yes or no. ');
            passwordLowChar = passwordLowChar.toLocaleLowerCase();
            if (passwordLowChar === "yes") {
 
@@ -44,10 +45,11 @@ var generatePassword = function() {
             }  
 
             else  {
-
+                window.prompt("Please enter YES or NO. ")
+                passwordLowChar ();
             }
             
-            
+        }
         }
 
         else {
