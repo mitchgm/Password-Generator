@@ -3,7 +3,7 @@
 
 # Project Description 
 
-In the 3rd challenge of the bootcamp, I set out to make a random password generator. The password generator should give a couple of prompts when the generate password button is clicked. After the password criteria is set, a random password should appear in the box.    
+In the 3rd challenge of the bootcamp, I set out to make a random password generator. The password generator should give a couple of prompts when the generate password button is clicked. After the password criteria is set, a random password should appear in a window alert.  
 
 # Installation 
 

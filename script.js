@@ -1,6 +1,6 @@
 // Assignment code here
 var specialCharactersArray = [
-    "",
+    
     "!",
     "'",
     "#",
@@ -37,22 +37,24 @@ var  thePassword = "";
 
 
 function generatePassword () {
-         getPasswordLength ();
-     getPasswordLowChar ();
-           getPasswordHighChar ();
-           getPasswordNum ();
-          getPasswordSpecial ();
-          getThePassword ();
+    userChar = [];
+    passwordLength = 0
+    getPasswordLength ();
+    getPasswordLowChar ();
+    getPasswordHighChar ();
+    getPasswordNum ();
+    getPasswordSpecial ();
+    getThePassword ();
         
 };
 
 // start of password length function
 function getPasswordLength() {
     passwordLength = window.prompt("How many characters would you like your password to be? ");
-
-        passwordLength = passwordLength.toLocaleLowerCase();
+       
 
         if (passwordLength > 7 && passwordLength < 128) {
+            
            return passwordLength = passwordLength;
            
         }
@@ -164,8 +166,9 @@ function getThePassword () {
        
 
     }
-    console.log (userChar);
-    console.log(thePassword);
+    
+   passwordLength = 0;
+  
 };
 
 
@@ -176,12 +179,8 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-     console.log(passwordLength);
-     console.log(passwordLowChar);
-    console.log(passwordHighChar);
-    console.log(passwordNum);
-    console.log(passwordSpecial);
-    
+  window.alert("Your secure password is: " + thePassword)
+    thePassword = "";
 };
 
 // Add event listener to generate button
